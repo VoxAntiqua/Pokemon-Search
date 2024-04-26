@@ -1,0 +1,2 @@
+Pokémon Search pulls JSON data from freeCodeCamp's PokéAPI Proxy (http://pokeapi-proxy.freecodecamp.rocks) and, given a valid Pokémon name or ID number, returns data about the named Pokémon.
+This was completed as an exercise for freeCodeCamp's course in JavaScript.
