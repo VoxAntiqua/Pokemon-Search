@@ -9,11 +9,11 @@
     <body>
         <main>
             <h1>Pokémon Search</h1>
-            <p>Search for Pokémon name or ID:</p>
-            <div>
-                <input type="text" id="search-input" />
+            <form id="search-form">
+                <label for="search-input">Search for Pokémon name or ID:</label><br>
+                <input name="search-input" type="text" id="search-input" required/>
                 <button id="search-button">Search</button>
-            </div>
+            </form>
             <p>    
                 <div>
                     <span id="pokemon-name"></span>

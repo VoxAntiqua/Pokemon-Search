@@ -1,5 +1,6 @@
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-button");
+const searchForm = document.getElementById("search-form");
 const pokeName = document.getElementById("pokemon-name");
 const pokeId = document.getElementById("pokemon-id");
 const weight = document.getElementById("weight");
@@ -16,14 +17,16 @@ const statBlock = document.getElementById("stat-block");
 
 async function fetchPokemon() {
     try {
-        const pokemonNameOrId = searchInput.value.toLowerCase();
+        const pokemonNameOrId = searchInput.value.toLowerCase().split(" ").join("-");
         const response = await fetch(`https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${pokemonNameOrId}`);
         const data = await response.json();
+        imgDiv.textContent = data;
     } catch (error) {
         alert("Pokémon not found");
     }
 }
 
-searchBtn.addEventListener("click", e => {
+searchForm.addEventListener("submit", e => {
+    e.preventDefault();
     fetchPokemon();
 });
