@@ -16,9 +16,14 @@ const statBlock = document.getElementById("stat-block");
 
 async function fetchPokemon() {
     try {
-
+        const pokemonNameOrId = searchInput.value.toLowerCase();
+        const response = await fetch(`https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${pokemonNameOrId}`);
+        const data = await response.json();
     } catch (error) {
-
+        alert("Pokémon not found");
     }
-
 }
+
+searchBtn.addEventListener("click", e => {
+    fetchPokemon();
+});
